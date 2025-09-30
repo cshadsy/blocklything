@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>visual basic(er)</title>
+    <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+    <script src="vb_blocks/blocks.js"></script>
+    <script src="vb_blocks/generators.js"></script>
+</head>
+<body>
+    <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+    <button id="generateBtn">Generate VB</button>
+    <pre id="output"></pre>
+
+    <script>
+        var workspace = Blockly.inject('blocklyDiv', {
+            toolbox: document.getElementById('toolbox')
+        });
+
+        document.getElementById('generateBtn').onclick = function() {
+            var code = Blockly.VisualBasic.workspaceToCode(workspace);
+            document.getElementById('output').textContent = code;
+        };
+    </script>
+
+    <xml id="toolbox" style="display: none">
+        <block type="comment_block"></block>
+    </xml>
+</body>
+</html>
