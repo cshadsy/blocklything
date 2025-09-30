@@ -6,9 +6,15 @@
 </head>
 <body>
     <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
-    <button id="generateBtn">Generate VB</button>
+    <button id="generateBtn">genrat</button>
     <pre id="output"></pre>
 
+    <xml id="toolbox" style="display: none">
+        <block type="comment_block"></block>
+    </xml>
+    <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+    <script src="vb_blocks/blocks.js"></script>
+    <script src="vb_blocks/generators.js"></script>
     <script>
         var workspace = Blockly.inject('blocklyDiv', {
             toolbox: document.getElementById('toolbox')
@@ -19,12 +25,5 @@
             document.getElementById('output').textContent = code;
         };
     </script>
-
-    <xml id="toolbox" style="display: none">
-        <block type="comment_block"></block>
-    </xml>
-    <script src="https://unpkg.com/blockly/blockly.min.js"></script>
-    <script src="vb_blocks/blocks.js"></script>
-    <script src="vb_blocks/generators.js"></script>
 </body>
 </html>
